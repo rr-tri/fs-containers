@@ -1,0 +1,10 @@
+Script started on 2023-12-09 17:01:24+05:45 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="145" LINES="25"]
+[?2004h]0;root@dim: /mnt/e/github-projects/fs-containersroot@dim:/mnt/e/github-projects/fs-containers# ubu[K[K[Kdocker run -it ubuntu bash
+[?2004l[?2004h]0;root@9471cd7c2707: /root@9471cd7c2707:/# mkdir /usr/src/app
+[?2004l[?2004h]0;root@9471cd7c2707: /root@9471cd7c2707:/# touch /src/    usr/src/app/index.js
+[?2004l[?2004h]0;root@9471cd7c2707: /root@9471cd7c2707:/# [Kexit
+[?2004lexit
+[?2004h]0;root@dim: /mnt/e/github-projects/fs-containersroot@dim:/mnt/e/github-projects/fs-containers# exit
+[?2004lexit
+
+Script done on 2023-12-09 17:02:47+05:45 [COMMAND_EXIT_CODE="0"]
