@@ -1,0 +1,61 @@
+Script started on 2023-12-10 11:09:05+05:45 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="124" LINES="36"]
+[?2004h]0;root@dim: /mnt/e/github-projects/fs-containersroot@dim:/mnt/e/github-projects/fs-containers# cd todo-app/todo-backend/
+[?2004l[?2004h]0;root@dim: /mnt/e/github-projects/fs-containers/todo-app/todo-backendroot@dim:/mnt/e/github-projects/fs-containers/todo-app/todo-backend# cd todo-app/todo-backend/exit[Kscript script-answers/exercise12_8.txtdocker exec -it todo-backend-mongo-1 bash[22Pcontainer lsmpose -f docker-compose.dev.yml up -d
+[?2004l[33mWARN[0m[0000] Found orphan containers ([todo-backend-app-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up. 
+[1A[1B[0G[?25l[+] Running 1/0
+ [32m✔[0m Container todo-backend-mongo-1  [32mRunning[0m                                                                             [34m0.0s [0m
+[?25h[1A[1A[0G[?25l[34m[+] Running 1/1[0m
+ [32m✔[0m Container todo-backend-mongo-1  [32mRunning[0m                                                                             [34m0.0s [0m
+[?25h[?2004h]0;root@dim: /mnt/e/github-projects/fs-containers/todo-app/todo-backendroot@dim:/mnt/e/github-projects/fs-containers/todo-app/todo-backend# docker compose -f docker-compose.dev.yml up -d[21Pcd todo-app/todo-backend/exit[Kscript script-answers/exercise12_8.txtdocker exec -it todo-backend-mongo-1 bash[22Pcontainer ls
+[?2004lCONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                     NAMES
+db77140b8673   mongo:4.4.16   "docker-entrypoint.s…"   17 minutes ago   Up 17 minutes   0.0.0.0:3456->27017/tcp   todo-backend-mongo-1
+[?2004h]0;root@dim: /mnt/e/github-projects/fs-containers/todo-app/todo-backendroot@dim:/mnt/e/github-projects/fs-containers/todo-app/todo-backend# docker container lsmpose -f docker-compose.dev.yml up -d[21Pcd todo-app/todo-backend/exit[Kscript script-answers/exercise12_8.txtdocker exec -it todo-backend-mongo-1 bash
+[?2004lroot@db77140b8673:/# exitmongo -u root -p example
+MongoDB shell version v4.4.16
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("7c0be7c2-e348-4a72-b562-73d7c79c89ff") }
+MongoDB server version: 4.4.16
+---
+The server generated these startup warnings when booting: 
+        2023-12-10T05:10:39.396+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> [3G[Jshow dbs[11G[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+todos
+> db.todos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("65748c20e9b9fdd7c0e1a0fb"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("65748c20e9b9fdd7c0e1a0fc"), "text" : "Learn about containers", "done" : false }
+> db.todos.create({text:"Increase the number of tools on my toolbeit[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbei[68G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbe[67Glt",[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[70G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[69G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[68G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[67G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[66G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[65G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[61G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[58G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[55G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[49G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[46G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[39G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[35G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[26G[3G[Jdb.todos.create({text:"Increase the number of tools on my toolbelt",[20G[3G[Jdb.todos.create({"text:"Increase the number of tools on my toolbelt",[21G[3G[Jdb.todos.create({"text:"Increase the number of tools on my toolbelt",[22G[3G[Jdb.todos.create({"text:"Increase the number of tools on my toolbelt",[23G[3G[Jdb.todos.create({"text:"Increase the number of tools on my toolbelt",[24G[3G[Jdb.todos.create({"text:"Increase the number of tools on my toolbelt",[25G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt",[26G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt",[73G:[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt",[73G"done":false}}[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false}[86G)[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[87G
+uncaught exception: TypeError: db.todos.create is not a function :
+@(shell):1:1
+> [3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[87G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[80G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[74G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[63G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[60G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[57G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[51G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[48G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[41G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[37G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[28G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[21G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[12G[3G[Jdb.todos.reate({"text":"Increase the number of tools on my toolbelt","done":false})[12G[3G[Jdb.todos.eate({"text":"Increase the number of tools on my toolbelt","done":false})[12G[3G[Jdb.todos.ate({"text":"Increase the number of tools on my toolbelt","done":false})[12G[3G[Jdb.todos.te({"text":"Increase the number of tools on my toolbelt","done":false})[12G[3G[Jdb.todos.e({"text":"Increase the number of tools on my toolbelt","done":false})[12G[3G[Jdb.todos.({"text":"Increase the number of tools on my toolbelt","done":false}[1;34m)[0m[12G[3G[Jdb.todos.s({"text":"Increase the number of tools on my toolbelt","done":false}[1;34m)[0m[13G[3G[Jdb.todos.sa({"text":"Increase the number of tools on my toolbelt","done":false}[1;34m)[0m[14G[3G[Jdb.todos.sav({"text":"Increase the number of tools on my toolbelt","done":false}[1;34m)[0m[15G[3G[Jdb.todos.save({"text":"Increase the number of tools on my toolbelt","done":false}[1;34m)[0m[16G[3G[Jdb.todos.save({"text":"Increase the number of tools on my toolbelt","done":false})[85G
+WriteResult({ "nInserted" : 1 })
+> [3G[Jdb.todos.save({"text":"Increase the number of tools on my toolbelt","done":false})[85G[3G[Jdb.todos.create({"text":"Increase the number of tools on my toolbelt","done":false})[87G[3G[Jdb.todos.find({})[20G[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("65748c20e9b9fdd7c0e1a0fb"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("65748c20e9b9fdd7c0e1a0fc"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("65754d52f9e8c560e221142a"), "text" : "Increase the number of tools on my toolbelt", "done" : false }
+> [3G[J[3G^C
+bye
+root@db77140b8673:/# exit
+exit
+[?2004h]0;root@dim: /mnt/e/github-projects/fs-containers/todo-app/todo-backendroot@dim:/mnt/e/github-projects/fs-containers/todo-app/todo-backend# exit
+[?2004lexit
+
+Script done on 2023-12-10 11:19:03+05:45 [COMMAND_EXIT_CODE="0"]
