@@ -1,5 +1,7 @@
 const express = require('express');
 const { Todo } = require('../mongo')
+const { getAsync, setAsync } = require('../redis');
+
 const router = express.Router();
 
 /* GET todos listing. */
@@ -8,12 +10,16 @@ router.get('/', async (_, res) => {
   res.send(todos);
 });
 
+// Initialize the todo counter in Redis
+setAsync('added_todos', 0);
+
 /* POST todo to listing. */
 router.post('/', async (req, res) => {
   const todo = await Todo.create({
     text: req.body.text,
     done: false
   })
+  await setAsync('added_todos', isNaN(parseInt(await getAsync('added_todos'))) ? 1 : parseInt(await getAsync('added_todos')) + 1);
   res.send(todo);
 });
 
@@ -29,18 +35,22 @@ const findByIdMiddleware = async (req, res, next) => {
 
 /* DELETE todo. */
 singleRouter.delete('/', async (req, res) => {
-  await req.todo.delete()  
+  await req.todo.delete()
   res.sendStatus(200);
 });
 
 /* GET todo. */
 singleRouter.get('/', async (req, res) => {
-  res.sendStatus(405); // Implement this
+  res.send(req.todo); // Implement this
 });
 
 /* PUT todo. */
 singleRouter.put('/', async (req, res) => {
-  res.sendStatus(405); // Implement this
+  const { todo } = req;
+  todo.text = req.body.text;
+  todo.done = req.body.done;
+  await todo.save();
+  res.send(todo); // Implement this
 });
 
 router.use('/:id', findByIdMiddleware, singleRouter)
