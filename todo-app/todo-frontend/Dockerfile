@@ -15,7 +15,7 @@ RUN npm ci
 RUN CI=true npm test
 
 # Set the environment variable for the backend URL
-ENV REACT_APP_BACKEND_URL=http://localhost:3000
+ENV REACT_APP_BACKEND_URL=http://localhost:8000/api
 
 # Command to start the app
 RUN npm run build
