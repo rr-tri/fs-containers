@@ -6,6 +6,7 @@ const indexRouter = require('./routes/index');
 const todosRouter = require('./routes/todos');
 
 const app = express();
+console.log("hello docker")
 
 app.use(cors());
 

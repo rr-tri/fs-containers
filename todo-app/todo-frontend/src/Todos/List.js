@@ -6,11 +6,14 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
   return (
     <>
       {
-        todos.map(todo => {
-          return (
+        todos.map((todo, i) =>
+        (
+          <React.Fragment key={i}>
             <Todo todo={todo} completeTodo={completeTodo} deleteTodo={deleteTodo} />
-          )
-        }).reduce((acc, cur) => [...acc, <hr />, cur], [])
+            <hr />
+          </React.Fragment>
+        )
+        )
       }
     </>
   )

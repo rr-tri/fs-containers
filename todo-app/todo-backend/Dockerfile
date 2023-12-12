@@ -10,7 +10,7 @@ COPY --chown=node:node . .
 # Install dependencies
 RUN npm ci --only=production
 
-EXPOSE 3000
+EXPOSE 3001
 
 ENV DEBUG=playground:*
 
