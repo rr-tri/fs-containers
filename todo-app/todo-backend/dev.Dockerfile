@@ -8,4 +8,4 @@ COPY . .
 RUN npm install
 
 # npm dev is the command to start the application in development mode
-CMD ["npm","run", "dev"]
+CMD npm run dev
